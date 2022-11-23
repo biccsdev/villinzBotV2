@@ -10,7 +10,7 @@ const content = {
     MSG_5: 'One Mint closer to WORLD DOMINATION 🔥 @madvillevillinz #VILLINZ',
     MSG_6: 'This one is out of this world! 👀 @madvillevillinz #VILLINZ',
     MSG_7: '🥶🔥👀🚨🤯 @madvillevillinz #VILLINZ',
-    MSG_8: 'A new VILLIN has appeared 🫡 @madvillevillinz #VILLINZ',
+    MSG_8: '🫡 @madvillevillinz #VILLINZ',
     MSG_9: 'DAMN SON, WHERE DID YOU FIND THIS? 🙀 @madvillevillinz #VILLINZ',
     MSG_10: 'LFG, new mint! 🔥🔥 @madvillevillinz #VILLINZ',
 }
@@ -58,7 +58,7 @@ const buildTweet = async function (dbSig) {
                 name: nft.name,
                 img: nft.image,
                 tx: result.explorer_url,
-                content: "- " + tweetContent[getRndInteger(0, 10)]
+                content: "- A new VILLNZ just arrived - " + tweetContent[getRndInteger(0, 10)]
                     + ", VILLIN: " + nft.name + ", TX: " + result.explorer_url,
             };
 

@@ -8,6 +8,8 @@ const app = express()
 const port = process.env.PORT || 4000;
 const admin = require("firebase-admin");
 var serviceAccount = require("./serviceAccount.json");
+const fs = require("fs");
+
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
@@ -19,26 +21,38 @@ admin.initializeApp({
 const dbSig = admin.firestore().doc('tokens/mint');
 
 const tweet = async () => {
-    const metadata = await buildTweet(dbSig);
-    if (metadata) {
-        const uri = metadata.img;
-        const filename = metadata.name;
+    try {
+        const metadata = await buildTweet(dbSig);
+        if (metadata) {
+            const uri = metadata.img;
+            const filename = metadata.name;
 
-        download(uri, filename, async function () {
-            try {
-                const mediaId = await twitterClient.v1.uploadMedia(`./${metadata.name}`);
-                await twitterClient.v2.tweet({
-                    text: metadata.content,
-                    media: {
-                        media_ids: [mediaId]
-                    }
-                });
-            } catch (e) {
-                console.log(e)
-            }
-        });
-    } else {
-        console.log("- No new Mint");
+            download(uri, filename, async function () {
+                try {
+                    const mediaId = await twitterClient.v1.uploadMedia(`./${filename}`);
+                    await twitterClient.v2.tweet({
+                        text: metadata.content,
+                        media: {
+                            media_ids: [mediaId]
+                        }
+                    });
+                } catch (e) {
+                    console.log(e)
+                }
+            });
+
+            // fs.unlink(`./image.png`, (err => {
+            //     if (err) console.log(err);
+            //     else {
+            //         console.log(`\nDeleted file: ${metadata.name}`)
+            //     }
+            // }));
+
+        } else {
+            console.log("- No new Mint");
+        }
+    } catch (e) {
+        console.log(e);
     }
 
 }
