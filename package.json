@@ -1,0 +1,23 @@
+{
+  "name": "villinzbotv2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@solana/web3.js": "^1.66.2",
+    "cron": "^2.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.3.0",
+    "fs": "^0.0.1-security",
+    "request": "^2.88.2",
+    "theblockchainapi": "^1.0.9407",
+    "twitter-api-v2": "^1.12.9"
+  }
+}

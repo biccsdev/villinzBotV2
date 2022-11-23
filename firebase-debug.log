@@ -1,0 +1,54 @@
+[debug] [2022-11-23T07:46:00.135Z] ----------------------------------------------------------------------
+[debug] [2022-11-23T07:46:00.136Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2022-11-23T07:46:00.137Z] CLI Version:   11.15.0
+[debug] [2022-11-23T07:46:00.137Z] Platform:      linux
+[debug] [2022-11-23T07:46:00.137Z] Node Version:  v16.14.2
+[debug] [2022-11-23T07:46:00.137Z] Time:          Wed Nov 23 2022 00:46:00 GMT-0700 (Mexican Pacific Standard Time)
+[debug] [2022-11-23T07:46:00.138Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-23T07:46:00.142Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-23T07:46:00.142Z] > authorizing via signed-in user (biccsdev@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/biccsdev/bots/villinzBotV2
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-11-23T07:47:18.286Z] > refreshing access token with scopes: []
+[debug] [2022-11-23T07:47:18.288Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-11-23T07:47:18.288Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-23T07:47:18.567Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-11-23T07:47:18.567Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-23T07:47:18.577Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2022-11-23T07:47:19.041Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2022-11-23T07:47:19.041Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project villinzbot (villinzbot) 
+[info] 
+=== Firestore Setup
+[debug] [2022-11-23T07:47:22.556Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/villinzbot/services/firestore.googleapis.com [none]
+[debug] [2022-11-23T07:47:22.556Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/villinzbot/services/firestore.googleapis.com x-goog-quota-user=projects/villinzbot
+[debug] [2022-11-23T07:47:23.188Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/villinzbot/services/firestore.googleapis.com 200
+[debug] [2022-11-23T07:47:23.188Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/villinzbot/services/firestore.googleapis.com [omitted]
+[debug] [2022-11-23T07:47:23.189Z] >>> [apiv2][query] GET https://appengine.googleapis.com/v1/apps/villinzbot [none]
+[debug] [2022-11-23T07:47:23.566Z] <<< [apiv2][status] GET https://appengine.googleapis.com/v1/apps/villinzbot 404
+[debug] [2022-11-23T07:47:23.566Z] <<< [apiv2][body] GET https://appengine.googleapis.com/v1/apps/villinzbot {"error":{"code":404,"message":"App does not exist.","status":"NOT_FOUND"}}
+[debug] [2022-11-23T07:47:23.566Z] error getting database typeHTTP Error: 404, App does not exist. {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":404,"message":"App does not exist.","status":"NOT_FOUND"}},"response":{"statusCode":404}},"exit":1,"message":"HTTP Error: 404, App does not exist.","status":404}
+[debug] [2022-11-23T07:47:23.566Z] database_type: undefined
+[debug] [2022-11-23T07:47:28.575Z] Error: Timed out.
+    at Timeout._onTimeout (/usr/local/lib/node_modules/firebase-tools/lib/utils.js:253:49)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[error] 
+[error] Error: An unexpected error has occurred.
